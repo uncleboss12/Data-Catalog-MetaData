@@ -40,11 +40,13 @@ export ZONE=us-west1-a
 sed -i "s/$REGION-a/$ZONE/g" variables.tf
 ```
 Next, execute the init-db.sh script:
+
 ```bash
 cd ~/cloudsql-postgresql-tooling
 bash init-db.sh
 ```
 This will create your PostgreSQL instance and populate it with a random schema. This can take around 10 to 15 minutes to complete.
+
 ![Screenshot 2025-06-21 5 28 15 PM](https://github.com/user-attachments/assets/96d4b10a-f3d8-4f05-babb-994af14c61a7)
 
 ![Screenshot 2025-06-21 5 29 33 PM](https://github.com/user-attachments/assets/88ddd2c8-9fb0-4c9f-8ea4-80e0981d5072)
@@ -120,13 +122,11 @@ docker run --rm --tty -v \
 --postgresql-database=$database
 ```
 Soon after you should receive the following output:
-```
-============End postgresql-to-datacatalog============
-```
+
 ![Screenshot 2025-06-21 5 35 57 PM](https://github.com/user-attachments/assets/e15f8ee4-c45a-47cd-b1c6-4aa7c68317d4)
 
 Click Check my progress to verify the objective.
-Assessment Completed!
+
 Execute PostgreSQL to Data Catalog connector
 
 ![Screenshot 2025-06-21 5 36 34 PM](https://github.com/user-attachments/assets/e00c1a5a-d816-40d9-9a00-0cc83ba45688)
@@ -186,7 +186,7 @@ Search results: 0 rows to display
 Ensure you see the following output in Cloud Shell before you move on:
 
   Cloud SQL Instance deleted
-  COMPLETED
+  
 Next, you learn how to do the same thing with a MySQL instance.
 
 ## **Task 3. Connect MySQL to Dataplex Universal Catalog**
@@ -220,8 +220,6 @@ bash init-db.sh
 ```
 This creates your MySQL instance and populate it with a random schema. After a few minutes, you should receive the following output:
 
-CREATE TABLE factory_warehouse14342.persons88a5ebc4 ( address9634 TEXT, cpf12934 FLOAT, food88799 BOOL, food4761 LONGTEXT, credit_card44049 FLOAT, city8417 TINYINT, name76076 DATETIME, address19458 TIME, reason49953 DATETIME )
- COMPLETED
 Note: If you get an Error: Failed to load "tfplan" as a plan file, re-run the init-db script.
 Click Check my progress to verify the objective.
 Create the MySQL Database
@@ -281,11 +279,9 @@ docker run --rm --tty -v \
 --mysql-user=$username \
 --mysql-pass=$password \
 --mysql-database=$database
-Copied!
+```
 Soon after you should receive the following output:
-```
-============End mysql-to-datacatalog============
-```
+
 Click Check my progress to verify the objective.
 Execute MySQL to Data Catalog connector
 
@@ -331,10 +327,11 @@ Finally, delete the PostgreSQL database:
 Ensure you see the following output in Cloud Shell before you move on:
 
   Cloud SQL Instance deleted
-  COMPLETED
+ 
 From the Dataplex Universal Catalog menu, under Discover, click on the Search page.
 
 In the search bar, enter MySQL and click Search.
 
 You no longer see the MySQL Tag Templates in the results.
+
 ![Screenshot 2025-06-21 5 53 41 PM](https://github.com/user-attachments/assets/bb828a5c-f579-44d0-b421-ced824117949)
